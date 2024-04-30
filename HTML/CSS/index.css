@@ -1,0 +1,299 @@
+* {
+	margin: 0;
+	padding: 0;
+	background-color: red;
+}
+
+header {
+	position: fixed;
+	width: 100vw;
+	height: 5.5vw;
+	z-index: 5;
+}
+
+#topWrapper {
+	position: fixed;
+	width: 100vw;
+	height: 5.5vw;
+	z-index: 5;
+	transition: background-color 0.3s ease;
+}
+
+#searchIcon {
+	position: fixed;
+	display: flex;
+    align-items: center;
+	width: 100vw;
+	height: 5.5vw;
+	z-index: 0;
+	transition: background-color 0.3s ease;
+}
+
+#searchIcon.appear {
+	background-color: white;
+}
+
+#searchIcon.dissappear {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#menuButton {
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+	left: 9vw;
+	width: 2.3vw;
+	cursor: pointer;
+	border: none;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#menuButton.appear {
+	animation-name: appear;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuButton.dissappear {
+	animation-name: dissappear;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Menu {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#searchButton {
+	position: absolute;
+    top: 54%;
+    transform: translateY(-50%);
+	right: 9vw;
+	width: 2vw;
+	cursor: pointer;
+	border: none;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#searchButton.appear {
+	animation-name: appear;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#searchButton.dissappear {
+	animation-name: dissappear;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Search {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#logoWrapper {
+	position: fixed;
+	width: 100vw;
+	height: 23vw;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#logoWrapper.center {
+	animation-name: slideMidTop;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+
+#logoWrapper.decenter {
+	animation-name: slideTopMid;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Logo {
+	position: absolute;
+	display:flex;
+	margin:0 0 10px;
+	justify-content:center;
+	align-items:center;
+	font-size: 13vw;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1vw;
+	font-family: Impact;
+	transform: scale(1, 1);
+	caret-color: white;
+	background-color: rgba(255, 255, 255, 0);
+}	
+
+#menuWrapper {
+	position: absolute;
+	width: 52vw;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0);
+	left: 0;
+}
+
+#menuWrapper.close {
+	animation-name: close;
+	animation-duration: 0.7s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuWrapper.open {
+	animation-name: open;
+	animation-duration: 1.7s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.2s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuParts {
+	position: relative;
+	float: left;
+	width: 46.5vw;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0);
+	left: 0;
+}
+
+#menuParts.close {
+	animation-name: close2;
+	animation-duration: 2.5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.2s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuParts.open {
+	animation-name: open2;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.2s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuPart1 {
+	position: relative;
+	float: left;
+	width: 23.25vw;
+	height: 100vh;
+	background-color: white;
+} 
+
+#menuPart2 {
+	position: relative;
+	float: right;
+	width: 23.25vw;
+	height: 100vh;
+	background-color:#eeeff2;
+}
+
+#closeButtonWrapper	 {
+	position: relative;
+	float: right;
+	width: 3vw;	
+	height: 100vh;	
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#closeButton {
+	position: absolute;
+	width: 3vw;
+	height: 3vw;
+	background-color: rgba(255, 255, 255, 0);
+	top: 5vw;
+	left: -1.2vw;
+	cursor: pointer;
+	border: none;
+	transition: transform 2s ease, backdrop-filter 0.5s ease;
+}
+
+#closeButton:hover {
+	backdrop-filter: blur(40px);
+	opacity: 0.5;
+	transform: scale(1.3);
+}
+
+#closeButtonImage {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	top: 2px;
+	width: 80%;
+	height: 80%;
+}
+
+
+@font-face {font-family: Gucci; src: url(Surse/Fonts/Granjon.otf);}
+
+@font-face {font-family: Impact;src: url(../Surse/Fonts/Impact.ttf);}
+
+@keyframes slideMidTop {from {transform: translate(0px, 0px);}to {transform: translate(2%, -38%) scale(0.2);}}
+
+@keyframes slideTopMid {from {transform: translate(2%, -38%) scale(0.2);}to {transform: translate(0px, 0px) scale(1);}}
+
+@keyframes close {from {left: 0;}to {left: -55vw;}}
+
+@keyframes close2 {from {left: 0;}to {left: -50vw;}}
+
+@keyframes open {from {left: -55vw;}to {left: 0;}}
+
+@keyframes open2 {from {left: -50vw;}to {left: 0;}}
+
+@keyframes appear {from {opacity: 0;}to {opacity: 1;}}
+
+@keyframes dissappear {from {opacity: 1;}to {opacity: 0;}}
+
+@media screen and (max-height: 1920px) and (max-width: 1080px) {
+	#searchButton {
+		position: absolute;
+		top: 48%;
+		transform: translateY(-50%);
+		right: 9vw;
+		width: 2vw;
+		cursor: pointer;
+		border: none;
+		opacity: 0;
+		background-color: rgba(255, 255, 255, 0);
+	}
+}
