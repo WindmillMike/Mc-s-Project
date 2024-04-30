@@ -4,29 +4,70 @@
 	background-color: red;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#Body.noMove {
+	overflow: hidden;
+}
+
+#Body.Move {
+	overflow: none;
+}
+
 header {
 	position: fixed;
-	width: 100vw;
-	height: 5.5vw;
+	width: 105vw;
+	height: 70px;
 	z-index: 5;
 }
 
 #topWrapper {
-	position: fixed;
-	width: 100vw;
-	height: 5.5vw;
+	position: absolute;
+	width: 105vw;
+	height: 70px;
 	z-index: 5;
+	top: 0;
 	transition: background-color 0.3s ease;
 }
 
+#headerWrapper {
+	position: absolute;
+	width: 105vw;
+	height: 70px;
+	z-index: 5;
+	top: 0;
+}
+
+#headerWrapper.close {
+	animation-name: down;
+	animation-duration: 1.4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#headerWrapper.open {
+	animation-name: up;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
 #searchIcon {
-	position: fixed;
+	position: absolute;
 	display: flex;
     align-items: center;
-	width: 100vw;
-	height: 5.5vw;
+	width: 105vw;
+	height: 70px;
 	z-index: 0;
-	transition: background-color 0.3s ease;
+	transition: background-color 0.2s ease;
 }
 
 #searchIcon.appear {
@@ -37,12 +78,22 @@ header {
 	background-color: rgba(255, 255, 255, 0);
 }
 
+#bothButtons {
+	position: absolute;
+	display: flex;
+    align-items: center;
+	width: 100vw;
+	height: 200px;
+	z-index: 0;
+	background-color: rgba(255, 255, 255, 0);
+}
+
 #menuButton {
 	position: absolute;
-    top: 50%;
+    top: 51%;
     transform: translateY(-50%);
 	left: 9vw;
-	width: 2.3vw;
+	width: 30px;
 	cursor: pointer;
 	border: none;
 	opacity: 0;
@@ -61,7 +112,7 @@ header {
 
 #menuButton.dissappear {
 	animation-name: dissappear;
-	animation-duration: 0.3s;
+	animation-duration: 0.1s;
 	animation-timing-function: ease-in-out;
 	animation-delay: 0s;
 	animation-iteration-count: 1;
@@ -75,10 +126,10 @@ header {
 
 #searchButton {
 	position: absolute;
-    top: 54%;
+    top: 52%;
     transform: translateY(-50%);
 	right: 9vw;
-	width: 2vw;
+	width: 25px;
 	cursor: pointer;
 	border: none;
 	opacity: 0;
@@ -97,7 +148,7 @@ header {
 
 #searchButton.dissappear {
 	animation-name: dissappear;
-	animation-duration: 0.3s;
+	animation-duration: 0.1s;
 	animation-timing-function: ease-in-out;
 	animation-delay: 0s;
 	animation-iteration-count: 1;
@@ -110,9 +161,9 @@ header {
 }
 
 #logoWrapper {
-	position: fixed;
+	position: relative;
 	width: 100vw;
-	height: 23vw;
+	height:400px;
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0);
 }
@@ -132,7 +183,7 @@ header {
 	animation-name: slideTopMid;
 	animation-duration: 0.3s;
 	animation-timing-function: ease-in-out;
-	animation-delay: 0s;
+	animation-delay: 0.1s;
 	animation-iteration-count: 1;
 	animation-direction: normal;
 	animation-fill-mode: both;
@@ -144,9 +195,10 @@ header {
 	margin:0 0 10px;
 	justify-content:center;
 	align-items:center;
-	font-size: 13vw;
+	font-size: 1600%;
 	width: 100%;
 	height: 100%;
+	top: 0;
 	text-decoration: none;
 	color: black;
 	letter-spacing: 1vw;
@@ -162,6 +214,8 @@ header {
 	height: 100vh;
 	background-color: rgba(255, 255, 255, 0);
 	left: 0;
+	opacity: 0;
+	z-index: -1;
 }
 
 #menuWrapper.close {
@@ -176,7 +230,37 @@ header {
 
 #menuWrapper.open {
 	animation-name: open;
-	animation-duration: 1.7s;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.2s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Transparent {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0);
+	backdrop-filter: blur(0px);
+}
+
+#Transparent.open {
+	animation-name: transpare;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Transparent.close {
+	animation-name: transpare2;
+	animation-duration: 0.5s;
 	animation-timing-function: ease-in-out;
 	animation-delay: 0.2s;
 	animation-iteration-count: 1;
@@ -185,8 +269,7 @@ header {
 }
 
 #menuParts {
-	position: relative;
-	float: left;
+	position: absolute;
 	width: 46.5vw;
 	height: 100vh;
 	background-color: rgba(255, 255, 255, 0);
@@ -222,8 +305,8 @@ header {
 } 
 
 #menuPart2 {
-	position: relative;
-	float: right;
+	position: absolute;
+	right: 0.1vw;
 	width: 23.25vw;
 	height: 100vh;
 	background-color:#eeeff2;
@@ -242,7 +325,7 @@ header {
 	width: 3vw;
 	height: 3vw;
 	background-color: rgba(255, 255, 255, 0);
-	top: 5vw;
+	top: 2.5vw;
 	left: -1.2vw;
 	cursor: pointer;
 	border: none;
@@ -263,20 +346,99 @@ header {
 	height: 80%;
 }
 
+footer {
+	position: relative;
+	float: left;
+	width: 96vw;
+	height: 100vw;
+	padding-left: 4vw;
+	background-color: black;
+}
+
+#Language {
+	position: relative;
+	float: left;
+	width: 96vw;
+	height: 20vw;
+	padding-top: 60px;
+	background-color: black;
+}
+
+#Country {
+	position: relative;
+	display: inline;
+	float: left;
+	background-color: black;
+	color: white;
+	font-size: 130%;
+	font-family: Porsche;
+	letter-spacing: 0.6px;
+}
+
+#languageDiv {
+	position: relative;
+	float: left;
+	width: 96vw;
+	height: 33px;
+	background-color: black;
+	padding-top: 15px;
+}
+
+#Flag {
+	position: relative;
+	float: left;
+	width: 28px;
+	height: 28px;
+	border-radius: 50px;
+	border: 1.5px solid grey;
+}
+
+#currentLanguage {
+	position: relative;
+	float: left;
+	background-color: black;
+	color: white;
+	left: 15px;
+	top: 50%; 
+  	transform: translateY(-45%);
+	font-size: 105%;
+	font-family: Porsche;
+}
+
+#footerButton {
+	position: relative;
+	float: left;
+	background-color: black;
+	color: white;
+	left: 40px;
+	top: 50%; 
+  	transform: translateY(-45%);
+	font-size: 105%;
+	border: none;
+	cursor: pointer;
+	z-index: 6;
+	text-decoration: underline;
+	font-family: Porsche;
+}
+
+#footerButton:hover{color: red;}
+
 
 @font-face {font-family: Gucci; src: url(Surse/Fonts/Granjon.otf);}
 
 @font-face {font-family: Impact;src: url(../Surse/Fonts/Impact.ttf);}
 
-@keyframes slideMidTop {from {transform: translate(0px, 0px);}to {transform: translate(2%, -38%) scale(0.2);}}
+@font-face {font-family: Porsche;src: url(../Surse/Fonts/Porsche.ttf);}
 
-@keyframes slideTopMid {from {transform: translate(2%, -38%) scale(0.2);}to {transform: translate(0px, 0px) scale(1);}}
+@keyframes slideMidTop {from {top: 0;}to {top: 50%; transform: translateY(-50%) scale(0.2);}}
 
-@keyframes close {from {left: 0;}to {left: -55vw;}}
+@keyframes slideTopMid {from {top: 50%; transform: translateY(-50%) scale(0.2);}to {top: 0;}}
+
+@keyframes close {from {left: 0; opacity: 1; z-index: 1;}to {left: -55vw; opacity: 0; z-index: -1;}}
 
 @keyframes close2 {from {left: 0;}to {left: -50vw;}}
 
-@keyframes open {from {left: -55vw;}to {left: 0;}}
+@keyframes open {from {left: -55vw; opacity: 0; z-index: -1;}to {left: 0; opacity: 1; z-index: 1;}}
 
 @keyframes open2 {from {left: -50vw;}to {left: 0;}}
 
@@ -284,16 +446,125 @@ header {
 
 @keyframes dissappear {from {opacity: 1;}to {opacity: 0;}}
 
-@media screen and (max-height: 1920px) and (max-width: 1080px) {
+@keyframes transpare {from {backdrop-filter: blur(0px); opacity: 0; z-index: -1;}to {backdrop-filter: blur(10px); opacity: 1; z-index: 1;}}
+
+@keyframes transpare2 {from {backdrop-filter: blur(10px); opacity: 1; z-index: 1;}to {backdrop-filter: blur(0px); opacity: 0; z-index: -1;}}
+
+@keyframes up {from {top: 0;}to {top: -10vw;}}
+
+@keyframes down {from {top: -10vw;}to {top: 0;}}
+
+@media screen and (max-height: 1920px) and (max-width: 1700px) {
+	#logoWrapper {
+		position: absolute;
+		width: 100vw;
+		height: 24vw;
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0);
+	}
+	
+	#Logo {
+		position: absolute;
+		display:flex;
+		margin:0 0 10px;
+		justify-content:center;
+		align-items:center;
+		font-size: 15vw;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+		color: black;
+		letter-spacing: 1vw;
+		font-family: Impact;
+		transform: scale(1, 1);
+		caret-color: white;
+		background-color: rgba(255, 255, 255, 0);
+	}	
+
+}
+
+@media screen and (max-height: 1920px) and (max-width: 760px) {
+	
+	#Logo.center {
+		animation-name: grow;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: both;
+	}
+	
+	
+	#Logo.decenter {
+		animation-name: shrink;
+		animation-duration: 0.3s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 0.1s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: both;
+	}
+
+	footer {
+		position: relative;
+		float: left;
+		width: 96vw;
+		height: 100vw;
+		padding-left: 8vw;
+		background-color: black;
+	}
+
+	@keyframes grow {from {font-size: 15vw;}to {font-size: 800%;}}
+
+}
+
+@media screen and (max-height: 1920px) and (max-width: 420px) {
 	#searchButton {
 		position: absolute;
-		top: 48%;
+		top: 50%;
 		transform: translateY(-50%);
-		right: 9vw;
-		width: 2vw;
+		right: 4vw;
+		width: 25px;
 		cursor: pointer;
 		border: none;
 		opacity: 0;
 		background-color: rgba(255, 255, 255, 0);
+	}
+	#Country {
+		position: relative;
+		display: inline;
+		float: left;
+		background-color: black;
+		color: white;
+		font-size: 4.9vw;
+		font-family: Porsche;
+		letter-spacing: 0.6px;
+	}
+	#currentLanguage {
+		position: relative;
+		float: left;
+		background-color: black;
+		color: white;
+		left: 15px;
+		top: 50%; 
+		transform: translateY(-45%);
+		font-size: 4vw;
+		font-family: Porsche;
+	}
+	#footerButton {
+		position: relative;
+		float: left;
+		background-color: black;
+		color: white;
+		left: 40px;
+		top: 50%; 
+		transform: translateY(-45%);
+		font-size: 4vw;
+		border: none;
+		cursor: pointer;
+		z-index: 6;
+		text-decoration: underline;
+		font-family: Porsche;
 	}
 }
