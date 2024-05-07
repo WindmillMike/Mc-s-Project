@@ -35,6 +35,7 @@ window.addEventListener('scroll', function() {
   var Transparent = document.getElementById('Transparent');
   var headerWrapper = document.getElementById('headerWrapper');
   var Body = document.getElementById('Body');
+  var Footer = document.getElementById('Footer');
   
   document.getElementById("menuButton").addEventListener("click", function() {
     menuWrapper.classList.remove('close');
@@ -47,6 +48,7 @@ window.addEventListener('scroll', function() {
     headerWrapper.classList.add('open');
     Body.classList.remove('Move');
     Body.classList.add('noMove');
+    Footer.classList.add('back');
   });
 
   document.getElementById("closeButton").addEventListener("click", function() {
@@ -60,4 +62,5 @@ window.addEventListener('scroll', function() {
     headerWrapper.classList.add('close');
     Body.classList.remove('noMove');
     Body.classList.add('Move');
+    Footer.classList.remove('back');
   });
