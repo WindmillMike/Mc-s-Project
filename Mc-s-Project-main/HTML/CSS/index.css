@@ -3,6 +3,15 @@
 	padding: 0;
 	background-color: red;
 	z-index: 0;
+    outline: none;
+}
+
+input,
+textarea,
+button,
+select,
+a,div {
+    -webkit-tap-highlight-color: transparent;
 }
 
 body::-webkit-scrollbar {
@@ -48,7 +57,7 @@ header {
 	animation-name: down;
 	animation-duration: 1.4s;
 	animation-timing-function: ease;
-	animation-delay: 0s;
+	animation-delay: 0.3s;
 	animation-iteration-count: 1;
 	animation-direction: normal;
 	animation-fill-mode: both;
@@ -218,10 +227,9 @@ header {
 	width: 100vw;
 	height: 100vh;
 	z-index: -1;
-	opacity: 1;
 	background-color: rgba(255, 255, 255, 0);
 	backdrop-filter: blur(0px);
-	transition: z-index, 1s ease;
+	transition: z-index, 2s ease;
 }
 
 #Parts.appear {z-index: 2;}
@@ -229,17 +237,16 @@ header {
 
 #menuWrapper {
 	position: absolute;
-	width: 1200px;
+	width: 1300px;
 	height: 100vh;
 	background-color: rgba(255, 255, 255, 0);
 	left: 0;
-	opacity: 0;
 	z-index: -1;
 }
 
 #menuWrapper.close {
 	animation-name: close;
-	animation-duration: 0.7s;
+	animation-duration: 0.8s;
 	animation-timing-function: ease;
 	animation-delay: 0s;
 	animation-iteration-count: 1;
@@ -249,9 +256,9 @@ header {
 
 #menuWrapper.open {
 	animation-name: open;
-	animation-duration: 1.5s;
+	animation-duration: 1s;
 	animation-timing-function: ease;
-	animation-delay: 0.3s;
+	animation-delay: 0.5s;
 	animation-iteration-count: 1;
 	animation-direction: normal;
 	animation-fill-mode: both;
@@ -259,47 +266,179 @@ header {
 
 #menuParts {
 	position: absolute;
-	width: 1100px;
+	width: 1200px;
 	height: 100vh;
 	background-color: rgba(255, 255, 255, 0);
 	left: 0;
 	z-index: -1;
 }
 
-#menuParts.close {
-	animation-name: close2;
-	animation-duration: 2s;
-	animation-timing-function: ease;
-	animation-delay: 0.2s;
-	animation-iteration-count: 1;
-	animation-direction: normal;
-	animation-fill-mode: both;
-}
-
-#menuParts.open {
-	animation-name: open2;
-	animation-duration: 1s;
-	animation-timing-function: ease;
-	animation-delay: 0s;
-	animation-iteration-count: 1;
-	animation-direction: normal;
-	animation-fill-mode: both;
-}
-
 #menuPart1 {
 	position: relative;
 	float: left;
-	width: 550px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 600px;
 	height: 100vh;
 	background-color: white;
+	overflow-y: auto;
+	overflow-x: hidden;
 } 
+
+#menuCenter {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	display: flex;
+    align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 450px;
+	height: 85vh;
+}
+
+#menuFilters {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	display: flex;
+    align-items: center;
+	width: 100%;
+	height: 150px;
+	border-radius: 10px;
+	margin-bottom: 40px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+
+#menuFilters:hover {
+	background-color: grey;
+}
+
+#menuParagraph {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+}
+
+#menuImage1 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 450px;
+	height: 135px;
+}
+
+#menuImage2 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 160px;
+	left: 25px;
+	top: 15px;
+}
+
+#menuImage3 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 200px;
+	left: 25px;
+	top: -5px;
+}
+
+#menuImage4 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 75px;
+	left: 25px;
+}
+
+#menuImage5 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 450px;
+	height: 150px;
+}
+
+#menuImage6 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 150px;
+	left: 25px;
+}
+
+#menuAux {
+	background-color: rgba(255, 255, 255, 0);
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 450px;
+	height: 100vh;
+}
 
 #menuPart2 {
 	position: absolute;
 	right: 0.1vw;
-	width: 550px;
+	width: 600px;
 	height: 100vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	overflow-y: auto;
+	overflow-x: hidden;
 	background-color:#eeeff2;
+}
+
+#menuSelector {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 300px;
+	border-radius: 10px;
+	margin-bottom: 40px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+
+#menuSelector:hover {
+	background-color: grey;
+}
+
+#menuImage7 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 200px;
+	height: 200px;
+}
+
+#menuImage8 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 200px;
+	height: 200px;
+}
+
+#menuImage9 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 200px;
+	height: 250px;
 }
 
 #closeButtonWrapper	 {
@@ -336,7 +475,6 @@ header {
 	height: 80%;
 }
 
-
 #Transparent {
 	position: fixed;
 	width: 100vw;
@@ -349,9 +487,9 @@ header {
 
 #Transparent.open {
 	animation-name: transpare;
-	animation-duration: 1s;
+	animation-duration: 1.5s;
 	animation-timing-function: ease;
-	animation-delay: 0s;
+	animation-delay: 0.5s;
 	animation-iteration-count: 1;
 	animation-direction: normal;
 	animation-fill-mode: both;
@@ -359,7 +497,7 @@ header {
 
 #Transparent.close {
 	animation-name: transpare2;
-	animation-duration: 0.5s;
+	animation-duration: 0.8s;
 	animation-timing-function: ease;
 	animation-delay: 0.2s;
 	animation-iteration-count: 1;
@@ -575,7 +713,7 @@ footer {
 	background-color: rgba(255, 255, 255, 0);
 	position: relative;
 	float: left;
-	width: 365px;
+	width: 355px;
 	height: 110px;
 }
 
@@ -654,13 +792,9 @@ footer {
 
 @keyframes slideTopMid {from {top: 50%; transform: translateY(-50%) scale(0.2);}to {top: 0;}}
 
-@keyframes close {from {left: 0; opacity: 1; z-index: 2;}to {left: -55vw; opacity: 0; z-index: -1;}}
+@keyframes close {from {left: 0; z-index: 1;}to {left: -70vw; z-index: -1;}}
 
-@keyframes close2 {from {left: 0; z-index: 2;}to {left: -50vw; z-index: -1;}}
-
-@keyframes open {from {left: -55vw; opacity: 0; z-index: -1;}to {left: 0; opacity: 1; z-index: 1;}}
-
-@keyframes open2 {from {left: -50vw; z-index: -1;}to {left: 0; z-index: 1;}}
+@keyframes open {from {left: -70vw;  z-index: -1;}to {left: 0; z-index: 1;}}
 
 @keyframes appear {from {opacity: 0;}to {opacity: 1;}}
 
@@ -675,19 +809,19 @@ footer {
 @keyframes down {from {top: -100px;}to {top: 0;}}
 
 @media screen and (max-height: 3000px) and (max-width: 1920px) {
+
 	#menuWrapper {
 		position: absolute;
 		width: 900px;
 		height: 100vh;
 		background-color: rgba(255, 255, 255, 0);
 		left: 0;
-		opacity: 0;
 		z-index: -1;
 	}
 	
 	#menuParts {
 		position: absolute;
-		width: 800px;
+		width: 810px;
 		height: 100vh;
 		background-color: rgba(255, 255, 255, 0);
 		left: 0;
@@ -696,16 +830,26 @@ footer {
 	#menuPart1 {
 		position: relative;
 		float: left;
-		width: 400px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 405px;
 		height: 100vh;
 		background-color: white;
+		overflow-y: auto;
+		overflow-x: hidden;
 	} 
 	
 	#menuPart2 {
 		position: absolute;
 		right: 0.1vw;
-		width: 400px;
+		width: 405px;
 		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow-y: auto;
+		overflow-x: hidden;
 		background-color:#eeeff2;
 	}
 
@@ -721,7 +865,7 @@ footer {
 		background-color: rgba(255, 255, 255, 0);
 		position: relative;
 		float: left;
-		width: 19vw;
+		width: 18.5vw;
 		height: 110px;
 	}
 	
@@ -741,6 +885,79 @@ footer {
 		font-family: Impact;
 		transform: scaleY(0.9);
 	}
+
+	#menuFilters {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		display: flex;
+		align-items: center;
+		width: 300px;
+		height: 150px;
+		border-radius: 10px;
+		margin-bottom: 0;
+		cursor: pointer;
+		transition: background-color 0.15s ease;
+	}
+
+	#menuImage1 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 90px;
+		left: 0;
+	}
+	
+	#menuImage2 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 130px;
+		left: 0px;
+		top: 15px;
+	}
+	
+	#menuImage3 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 200px;
+		left: 0px;
+		top: -5px;
+	}
+	
+	#menuImage4 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 55px;
+		left: 0px;
+	}
+	
+	#menuImage5 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 100px;
+	}
+	
+	#menuImage6 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 120px;
+		left: 0px;
+	}
+
+	@keyframes close {from {left: 0; z-index: 1;}to {left: -1200px; z-index: -1;}}
+
+	@keyframes open {from {left: -1000px;  z-index: -1;}to {left: 0; z-index: 1;}}
 
 }
 
@@ -950,14 +1167,33 @@ footer {
 }
 
 @media screen and (max-height: 3000px) and (max-width: 950px) {
+		#menuAux {
+		background-color: rgba(255, 255, 255, 0);
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		width: 400px;
+		height: 1150px;
+	}	
+
 	#menuWrapper {
 		position: absolute;
 		width: 105vw;
 		height: 105vh;
 		background-color: rgba(255, 255, 255, 0);
-		left: 0;
-		opacity: 0;
+		left: -50px;
 		z-index: -1;
+	}
+
+	#Parts {
+		position: fixed;
+		width: 105vw;
+		height: 105vh;
+		z-index: -1;
+		opacity: 1;
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(0px);
+		transition: z-index, 2s ease;
 	}
 	
 	#menuParts {
@@ -968,41 +1204,57 @@ footer {
 		left: 0;
 	}
 	
-
 	#menuPart1 {
 		position: relative;
 		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 105vw;
 		height: 105vh;
 		background-color: white;
+		overflow-y: auto;
+		overflow-x: hidden;
+		z-index: 1;
 	} 
-	
-	#menuPart2 {
-		position: absolute;
-		right: 0.1vw;
-		width: 0;
-		height: 100vh;
-		background-color:#eeeff2;
-	}
 
-	#menuParts.open {
-		animation-name: open2;
-		animation-duration: 1s;
+	#menuPart1.hide {
+		animation-name: close2;
+		animation-duration: 0.5s;
 		animation-timing-function: ease;
 		animation-delay: 0s;
 		animation-iteration-count: 1;
 		animation-direction: normal;
 		animation-fill-mode: both;
 	}
+	
+	#menuPart2 {
+		position: absolute;
+		right: 0.1vw;
+		width: 105vw;
+		height: 105vh;
+		background-color:#eeeff2;
+		z-index: 0;
+	}
 
 	#menuWrapper.open {
 		animation-name: open;
-		animation-duration: 1.5s;
+		animation-duration: 0.8s;
 		animation-timing-function: ease;
 		animation-delay: 0.5s;
 		animation-iteration-count: 1;
 		animation-direction: normal;
 		animation-fill-mode: both;
+	}
+
+	#Transparent {
+		position: fixed;
+		width: 0vw;
+		height: 0vh;
+		z-index: -1;
+		opacity: 0;
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(0px);
 	}
 
 	#closeButtonWrapper	 {
@@ -1026,9 +1278,11 @@ footer {
 		transition: transform 2s ease, backdrop-filter 0.5s ease;
 	}
 
-	@keyframes transpare {from {backdrop-filter: blur(0px); opacity: 1; z-index: -1;}to {backdrop-filter: blur(0px); opacity: 1; z-index: 1;}}
+	@keyframes close2 {from {left: 0;}to {left: -105vw;}}
 
-	@keyframes transpare2 {from {backdrop-filter: blur(0x); opacity: 1; z-index: 1;}to {backdrop-filter: blur(0px); opacity: 1; z-index: -1;}}
+	@keyframes transpare {from {backdrop-filter: blur(0px); z-index: -1;}to {backdrop-filter: blur(0px);  z-index: 1;}}
+
+	@keyframes transpare2 {from {backdrop-filter: blur(0px); z-index: 1;}to {backdrop-filter: blur(0px); z-index: -1;}}
 
 }
 
@@ -1233,6 +1487,76 @@ footer {
 
 @media screen and (max-height: 3000px) and (max-width: 550px) {
 
+	
+	#menuFilters {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		display: flex;
+		align-items: center;
+		width: 300px;
+		height: 150px;
+		border-radius: 10px;
+		margin-bottom: 0;
+		cursor: pointer;
+		transition: background-color 0.15s ease;
+	}
+
+	#menuImage1 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 90px;
+		left: 0;
+	}
+	
+	#menuImage2 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 130px;
+		left: 0px;
+		top: 15px;
+	}
+	
+	#menuImage3 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 200px;
+		left: 0px;
+		top: -5px;
+	}
+	
+	#menuImage4 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 55px;
+		left: 0px;
+	}
+	
+	#menuImage5 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 100px;
+	}
+	
+	#menuImage6 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 120px;
+		left: 0px;
+	}
+
 	#horizontalLine {
 		position: relative;
 		float: left;
@@ -1275,6 +1599,7 @@ footer {
 }
 
 @media screen and (max-height: 3000px) and (max-width: 420px) {
+	
 	#logoWrapper {
 		position: absolute;
 		width: 102vw;

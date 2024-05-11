@@ -36,12 +36,12 @@ window.addEventListener('scroll', function() {
   var headerWrapper = document.getElementById('headerWrapper');
   var Body = document.getElementById('Body');
   var Parts = document.getElementById('Parts');
+  const menuPart1 = document.getElementById('menuPart1');
+  const menuPart2 = document.getElementById('menuPart2');
   
   document.getElementById("menuButton").addEventListener("click", function() {
     menuWrapper.classList.remove('close');
-    menuParts.classList.remove('close');
     menuWrapper.classList.add('open');
-    menuParts.classList.add('open');
     Transparent.classList.remove('close');
     Transparent.classList.add('open');
     headerWrapper.classList.remove('close');
@@ -54,9 +54,7 @@ window.addEventListener('scroll', function() {
 
   document.getElementById("closeButton").addEventListener("click", function() {
     menuWrapper.classList.remove('open');
-    menuParts.classList.remove('open');
     menuWrapper.classList.add('close');
-    menuParts.classList.add('close');
     Transparent.classList.remove('open');
     Transparent.classList.add('close');
     headerWrapper.classList.remove('open');
@@ -65,4 +63,19 @@ window.addEventListener('scroll', function() {
     Body.classList.add('Move');
     Parts.classList.remove('appear');
     Parts.classList.add('hide');
+    setTimeout(() => {
+      menuPart1.classList.remove('hide');
+    }, 500);
+    setTimeout(() => {
+      menuPart1.scrollTop = 3;
+      menuPart2.scrollTop = 3;
+    }, 200);
   });
+
+  for (const menuFilter of document.querySelectorAll('#menuFilters')) {
+    menuFilter.addEventListener('click', function() {
+      menuPart1.classList.add('hide');
+    });
+  }
+
+
