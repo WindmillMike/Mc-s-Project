@@ -63,6 +63,9 @@ window.addEventListener('scroll', function() {
     Body.classList.add('Move');
     Parts.classList.remove('appear');
     Parts.classList.add('hide');
+    menuFilters.forEach(function(item) {
+      item.classList.remove('selected');
+  });
     setTimeout(() => {
       menuPart1.classList.remove('hide');
     }, 500);
@@ -74,8 +77,14 @@ window.addEventListener('scroll', function() {
 
   for (const menuFilter of document.querySelectorAll('#menuFilters')) {
     menuFilter.addEventListener('click', function() {
+      menuFilters.forEach(function(item) {
+        item.classList.remove('selected');
+    });
       menuPart1.classList.add('hide');
+      this.classList.toggle('selected');
     });
   }
+
+  var menuFilters = document.querySelectorAll("#menuFilters");
 
 
