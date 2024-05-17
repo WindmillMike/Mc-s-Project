@@ -1,0 +1,1708 @@
+* {
+	margin: 0;
+	padding: 0;
+	background-color: red;
+	z-index: 0;
+    outline: none;
+}
+
+input,
+textarea,
+button,
+select,
+a,div {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#Body {overflow-x: hidden;}
+
+#Body.noMove {
+	overflow: hidden;
+}
+
+#Body.Move {
+	overflow: none;
+}
+
+header {
+	position: fixed;
+	width: 100vw;
+	height: 70px;
+	z-index: 1;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#topWrapper {
+	position: absolute;
+	width: 100vw;
+	height: 70px;
+	top: 0;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#headerWrapper {
+	position: absolute;
+	width: 100vw;
+	height: 70px;
+	z-index: 5;
+	top: 0;
+	background-color: rgba(255, 255, 255, 0);
+	will-change: top;
+}
+
+#headerWrapper.close {
+	animation-name: down;
+	animation-duration: 1.4s;
+	animation-timing-function: ease;
+	animation-delay: 0.3s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#headerWrapper.open {
+	animation-name: up;
+	animation-duration: 1.4s;
+	animation-timing-function: ease;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#searchIcon {
+	position: absolute;
+	display: flex;
+    align-items: center;
+	width: 100vw;
+	height: 70px;
+	z-index: 0;
+	transition: background-color 0.2s ease;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#searchIcon.appear {
+	background-color: white;
+}
+
+#searchIcon.dissappear {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#bothButtons {
+	position: relative;
+	display: flex;
+    align-items: center;
+	width: 100vw;
+	height: 70px;
+	z-index: 0;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#menuButton {
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+	left: 9vw;
+	width: 30px;
+	cursor: pointer;
+	border: none;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#menuButton.appear {
+	animation-name: appear;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuButton.dissappear {
+	animation-name: dissappear;
+	animation-duration: 0.1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Menu {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#searchButton {
+	position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+	right: 9vw;
+	width: 25px;
+	cursor: pointer;
+	border: none;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#searchButton.appear {
+	animation-name: appear;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#searchButton.dissappear {
+	animation-name: dissappear;
+	animation-duration: 0.1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Search {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#logoWrapper {
+	position: absolute;
+	width: 100vw;
+	height:400px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#logoWrapper.center {
+	animation-name: slideMidTop;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+
+#logoWrapper.decenter {
+	animation-name: slideTopMid;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.1s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Logo {
+	position: absolute;
+	display:flex;
+	margin:0 0 10px;
+	justify-content:center;
+	align-items:center;
+	font-size: 1600%;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1vw;
+	font-family: Impact;
+	transform: scale(1, 1);
+	caret-color: white;
+	background-color: rgba(255, 255, 255, 0);
+}	
+
+#Parts {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	background-color: rgba(255, 255, 255, 0);
+	backdrop-filter: blur(0px);
+	transition: z-index, 2s ease;
+}
+
+#Parts.appear {z-index: 2;}
+#Parts.hide {z-index: -1;}
+
+#menuWrapper {
+	position: absolute;
+	width: 1300px;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0);
+	left: 0;
+	z-index: -1;
+	will-change: left;
+}
+
+#menuWrapper.close {
+	animation-name: close;
+	animation-duration: 0.8s;
+	animation-timing-function: ease;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuWrapper.open {
+	animation-name: open;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-delay: 0.5s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#menuParts {
+	position: absolute;
+	width: 1200px;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0);
+	left: 0;
+	z-index: -1;
+}
+
+#menuPart1 {
+	position: relative;
+	float: left;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 600px;
+	height: 100vh;
+	background-color: white;
+	overflow-y: auto;
+	overflow-x: hidden;
+} 
+
+#menuCenter {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	display: flex;
+    align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 450px;
+	height: 85vh;
+}
+
+#menuFilters {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	display: flex;
+    align-items: center;
+	width: 100%;
+	height: 150px;
+	border-radius: 10px;
+	margin-bottom: 40px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+
+#menuFilters:hover {
+	background-color: grey;
+}
+
+#menuFilters.selected {
+	background-color: grey;
+}
+
+#menuParagraph {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+}
+
+#menuImage1 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 450px;
+	height: 135px;
+}
+
+#menuImage2 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 160px;
+	left: 25px;
+	top: 15px;
+}
+
+#menuImage3 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 200px;
+	left: 25px;
+	top: -5px;
+}
+
+#menuImage4 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 75px;
+	left: 25px;
+}
+
+#menuImage5 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 450px;
+	height: 150px;
+}
+
+#menuImage6 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 400px;
+	height: 150px;
+	left: 25px;
+}
+
+#menuAux {
+	background-color: rgba(255, 255, 255, 0);
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 450px;
+	height: calc(80vh + 450px);
+}
+
+#menuAux2 {
+	background-color: rgba(255, 255, 255, 0);
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 450px;
+	height: calc(80vh + 450px);
+}
+
+#menuPart2 {
+	position: absolute;
+	right: 0.1vw;
+	width: 600px;
+	height: 100vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color:#eeeff2;
+}
+
+#menuSelector {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 300px;
+	border-radius: 10px;
+	margin-bottom: 40px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+
+#menuSelector:hover {
+	background-color: grey;
+}
+
+#menuImage7 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 200px;
+	height: 200px;
+}
+
+#menuImage8 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 200px;
+	height: 200px;
+}
+
+#menuImage9 {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	width: 200px;
+	height: 250px;
+}
+
+#closeButtonWrapper	 {
+	position: absolute;
+	right: 0;
+	width: 3vw;	
+	height: 100vh;	
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#closeButton {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: rgba(255, 255, 255, 0);
+	left: calc(-40px + 2vw);
+	top: 2.5vw;
+	cursor: pointer;
+	border: none;
+	transition: transform 2s ease, backdrop-filter 0.5s ease;
+}
+
+#closeButton:hover {
+	backdrop-filter: blur(40px);
+	opacity: 0.5;
+	transform: scale(1.3);
+}
+
+#closeButtonImage {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	top: 2px;
+	width: 80%;
+	height: 80%;
+}
+
+#Transparent {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0);
+	backdrop-filter: blur(0px);
+}
+
+#Transparent.open {
+	animation-name: transpare;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-delay: 0.5s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+#Transparent.close {
+	animation-name: transpare2;
+	animation-duration: 0.8s;
+	animation-timing-function: ease;
+	animation-delay: 0.2s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: both;
+}
+
+footer {
+	position: relative;
+	float: left;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 100vw;
+	height: 950px;
+	background-color: black;
+}
+
+#footerWrapper {
+	width: 1870px;
+	height: 950px;
+	padding-left: 4vw;
+	background-color: black;
+}
+
+#Language {
+	position: relative;
+	float: left;
+	width: 80vw;
+	height: 100px;
+	padding-top: 60px;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#Country {
+	position: relative;
+	display: inline;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	color: white;
+	font-size: 130%;
+	font-family: Porsche;
+	letter-spacing: 0.6px;
+}
+
+#languageDiv {
+	position: relative;
+	float: left;
+	width: 80vw;
+	height: 33px;
+	background-color: rgba(255, 255, 255, 0);
+	padding-top: 15px;
+}
+
+#Flag {
+	position: relative;
+	float: left;
+	width: 28px;
+	height: 28px;
+	border-radius: 50px;
+	border: 1.5px solid grey;
+}
+
+#currentLanguage {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	color: white;
+	left: 15px;
+	top: 50%; 
+  	transform: translateY(-45%);
+	font-size: 105%;
+	font-family: Porsche;
+}
+
+#Trio {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	height: 200px;
+	width: 80vw;
+}
+
+#Newsletter {
+	position: relative;
+	float: left;
+	width: 320px;
+	height: 170px;
+	background-color: rgba(255, 255, 255, 0);
+	top: 15px;
+}
+
+#trioH2 {
+	background-color: rgba(255, 255, 255, 0);
+	font-size: 150%; 
+	font-family: Porsche; 
+	color: white; 
+	font: 600 clamp(1.13rem, 1.08rem + 0.21vw, 1.33rem) / calc(2.125ex + 6px);
+}
+
+#trioP {
+	background-color: rgba(255, 255, 255, 0);
+	top: 10px;
+	float: left;
+	position: relative;
+	font-size: 115%; 
+	font-family: Porsche; 
+	color: white;
+}
+
+#trioButton {
+	background-color: white;
+	bottom: 0;
+	left: 0;
+	cursor: pointer;
+	position: absolute; 
+	border-radius: 7px; 
+	width: 320px; 
+	height: 55px; 
+	font-size: 106%; 
+	transition: all 0.15s ease-in;
+}
+
+#Newsletter > button:hover {background-color: grey;}
+
+#Contact {
+	position: relative;
+	float: left;
+	width: 320px;
+	height: 170px;
+	background-color: rgba(255, 255, 255, 0);
+	top: 15px;
+	left: 40px;
+}
+
+#Contact > button:hover {background-color: grey;}
+
+#socialMedia {
+	position: relative;
+	float: left;
+	width: 380px;
+	height: 170px;
+	background-color: rgba(255, 255, 255, 0);
+	top: 15px;
+	left: 80px;
+}
+
+#socialMediaDiv {
+	position: absolute; 
+	width: 380px; 
+	bottom: 0; 
+	height: 55px;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#socialMediaButton {
+	background-color: white;
+	bottom: 0;
+	cursor: pointer;
+	position: relative; 
+	float: left; 
+	border-radius: 7px; 
+	width: 55px; 
+	height: 55px;
+	font-size: 100%;
+	transition: background-color 0.15s ease-in;
+}
+
+.button1 {left:40px;}
+.button2 {left:50px;}
+
+#socialMediaButton:hover {background-color: grey;}
+
+#socialMediaButton > img:hover {background-color: grey;}
+
+#footerButton {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	color: white;
+	left: 40px;
+	top: 50%; 
+  	transform: translateY(-45%);
+	font-size: 105%;
+	border: none;
+	cursor: pointer;
+	z-index: 0;
+	text-decoration: underline;
+	font-family: Porsche;
+	transition: color 0.15s ease-in;
+}
+
+#footerButton:hover{color: red;}
+
+#Company {
+	position: relative;
+	float: left;
+	background-color: rgba(255, 255, 255, 0);
+	height: 150px;
+	width: 80vw;
+	top: 40px;
+}
+
+#First {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	width: 365px;
+	height: 110px;
+}
+
+#Second {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	width: 355px;
+	height: 110px;
+}
+
+#Third {
+	background-color: rgba(255, 255, 255, 0);
+	position: relative;
+	float: left;
+	width: 365px;
+	height: 110px;
+}
+
+#listCompany {
+	list-style: none;
+	background-color: rgba(255, 255, 255, 0);
+	top: 15px;
+	float: left;
+	position: relative;
+	font-size: 105%; 
+	font-family: Porsche; 
+	color: white;
+}
+
+#companyButton {
+	background-color: rgba(255, 255, 255, 0);
+	text-decoration: none;
+	color: white;
+	transition: color 0.15s ease-in;
+}
+
+#companyButton:hover {color: red;}
+
+#companyList {
+	background-color: rgba(255, 255, 255, 0);
+	padding-top: 6px;
+}
+
+#horizontalLine {
+	position: relative;
+	float: left;
+	bottom: 0;
+    border: none; 
+    height: 1px; 
+	width: calc(100% - 4vw);
+    background-color: grey; 
+    top: 140px;
+}
+
+#logoFooterDiv {
+	background-color: rgba(255, 255, 255, 0);;
+	position: relative;
+	float: left;
+	width: calc(100% - 4vw);
+	height: 150px;
+	top: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#logoFooter {
+	background-color: rgba(255, 255, 255, 0);;
+	text-decoration: none;
+	color: white;
+	font-size: 5vw;
+	font-family: Impact;
+	transform: scaleY(0.9);
+}
+
+@font-face {font-family: Gucci; src: url(Surse/Fonts/Granjon.otf);}
+
+@font-face {font-family: Impact;src: url(../Surse/Fonts/Impact.ttf);}
+
+@font-face {font-family: Porsche;src: url(../Surse/Fonts/Porsche.ttf);}
+
+@keyframes slideMidTop {from {top: 0;}to {top: 50%; transform: translateY(-50%) scale(0.2);}}
+
+@keyframes slideTopMid {from {top: 50%; transform: translateY(-50%) scale(0.2);}to {top: 0;}}
+
+@keyframes close {from {left: 0; z-index: 1;}to {left: -70vw; z-index: -1;}}
+
+@keyframes open {from {left: -70vw;  z-index: -1;}to {left: 0; z-index: 1;}}
+
+@keyframes appear {from {opacity: 0;}to {opacity: 1;}}
+
+@keyframes dissappear {from {opacity: 1;}to {opacity: 0;}}
+
+@keyframes transpare {from {backdrop-filter: blur(0px); opacity: 0; z-index: -1;}to {backdrop-filter: blur(10px); opacity: 1; z-index: 1;}}
+
+@keyframes transpare2 {from {backdrop-filter: blur(10px); opacity: 1; z-index: 1;}to {backdrop-filter: blur(0px); opacity: 0; z-index: -1;}}
+
+@keyframes up {from {top: 0;}to {top: -100px;}}
+
+@keyframes down {from {top: -100px;}to {top: 0;}}
+
+@media screen and (max-height: 3000px) and (max-width: 1920px) {
+
+	#menuWrapper {
+		position: absolute;
+		width: 900px;
+		height: 100vh;
+		background-color: rgba(255, 255, 255, 0);
+		left: 0;
+		z-index: -1;
+	}
+	
+	#menuParts {
+		position: absolute;
+		width: 810px;
+		height: 100vh;
+		background-color: rgba(255, 255, 255, 0);
+		left: 0;
+	}
+
+	#menuPart1 {
+		position: relative;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 405px;
+		height: 100vh;
+		background-color: white;
+		overflow-y: auto;
+		overflow-x: hidden;
+	} 
+	
+	#menuPart2 {
+		position: absolute;
+		right: 0.1vw;
+		width: 405px;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow-y: auto;
+		overflow-x: hidden;
+		background-color:#eeeff2;
+	}
+
+	#First {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		width: 19vw;
+		height: 110px;
+	}
+	
+	#Second {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		width: 18.5vw;
+		height: 110px;
+	}
+	
+	#Third {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		width: 19vw;
+		height: 110px;
+	}
+
+	#logoFooter {
+		background-color: rgba(255, 255, 255, 0);;
+		text-decoration: none;
+		color: white;
+		font-size: 100px;
+		font-family: Impact;
+		transform: scaleY(0.9);
+	}
+
+	#menuFilters {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		display: flex;
+		align-items: center;
+		width: 300px;
+		height: 150px;
+		border-radius: 10px;
+		margin-bottom: 0;
+		cursor: pointer;
+		transition: background-color 0.15s ease;
+	}
+
+	#menuImage1 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 90px;
+		left: 0;
+	}
+	
+	#menuImage2 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 130px;
+		left: 0px;
+		top: 15px;
+	}
+	
+	#menuImage3 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 200px;
+		left: 0px;
+		top: -5px;
+	}
+	
+	#menuImage4 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 55px;
+		left: 0px;
+	}
+	
+	#menuImage5 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 100px;
+	}
+	
+	#menuImage6 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 120px;
+		left: 0px;
+	}
+
+	@keyframes close {from {left: 0; z-index: 1;}to {left: -1200px; z-index: -1;}}
+
+	@keyframes open {from {left: -1000px;  z-index: -1;}to {left: 0; z-index: 1;}}
+
+}
+
+@media screen and (max-height: 3000px) and (max-width: 1700px) {
+	
+	#logoWrapper {
+		position: absolute;
+		width: 100vw;
+		height: calc(11vw + 200px);
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0);
+	}
+	
+	#Logo {
+		position: absolute;
+		display:flex;
+		margin:0 0 10px;
+		justify-content:center;
+		align-items:center;
+		font-size: 15vw;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+		color: black;
+		letter-spacing: 1vw;
+		font-family: Impact;
+		transform: scale(1, 1);
+		caret-color: white;
+		background-color: rgba(255, 255, 255, 0);
+	}	
+
+}
+
+@media screen and (max-height: 3000px) and (max-width: 1300px) {
+
+	footer {
+		position: relative;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 1000px;
+		background-color: black;
+	}
+	
+	#footerWrapper {
+		width: 1870px;
+		height: 1000px;
+		padding-left: 4vw;
+		background-color: black;
+	}
+	
+	
+	#Trio {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		height: 260px;
+		width: 96vw;
+	}
+	
+	#socialMedia {
+		position: relative;
+		float: left;
+		width: 340px;
+		height: 235px;
+		background-color: rgba(255, 255, 255, 0);
+		top: 15px;
+		left: 80px;
+	}
+
+	#socialMediaDiv {
+		position: absolute; 
+		overflow-y: auto;
+		width: 250px; 
+		bottom: 0; 
+		height: 120px;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	.button1 {
+		top:10px;
+		left: 0px;
+	}
+
+	.button2 {
+		top: 10px;
+		left: 10px;
+	}
+}
+
+@media screen and (max-height: 3000px) and (max-width: 1100px) {
+
+	footer {
+		position: relative;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 1150px;
+		background-color: black;
+	}
+	
+	#footerWrapper {
+		width: 1870px;
+		height: 1150px;
+		padding-left: 4vw;
+		background-color: black;
+	}
+	
+	#Trio {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		height: 400px;
+		width: 96vw;
+	}
+	#Contact {
+		position: relative;
+		float: left;
+		width: 370px;
+		height: 170px;
+		background-color: rgba(255, 255, 255, 0);
+		top: 15px;
+		left: 40px;
+	}
+	
+	#socialMedia {
+		position: relative;
+		float: left;
+		width: 340px;
+		height: 170px;
+		background-color: rgba(255, 255, 255, 0);
+		top: 60px;
+		left: 0px;
+	}
+	#socialMediaDiv {
+		position: absolute; 
+		width: 380px; 
+		bottom: 0; 
+		height: 55px;
+		background-color: rgba(255, 255, 255, 0);
+	}
+	
+	.button1 {
+		top: 0;
+		left: 40px;
+	}
+	.button2 {
+		top: 0;
+		left: 50px;
+	}
+}
+
+@media screen and (max-height: 3000px) and (max-width: 1023px) {
+	#logoWrapper {
+	position: absolute;
+	width: 100vw;
+	height: 300px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0);
+	}
+
+	#Logo.center {
+		animation-name: grow;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: both;
+	}
+
+	#menuButton {
+		position: absolute;
+		top: 51%;
+		transform: translateY(-50%);
+		left: 6%;
+		width: 30px;
+		cursor: pointer;
+		border: none;
+		opacity: 0;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	#searchButton {
+		position: absolute;
+		top: 52%;
+		transform: translateY(-50%);
+		right: auto;
+		left: calc(10% + 50px);
+		width: 25px;
+		cursor: pointer;
+		border: none;
+		opacity: 0;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	@keyframes grow {from {font-size: 15vw;}to {font-size: 900%;}}
+
+	@keyframes slideMidTop {from {width: 100vw; top: 0;}to {width: 220vw;top: 50%; transform: translate(-12%, -50%) scale(0.2);}}
+
+	@keyframes slideTopMid {from {width: 220vw; top: 50%; transform: translate(-12%, -50%) scale(0.2);}to {top: 0; width: 100vw;}}
+
+}
+
+@media screen and (max-height: 3000px) and (max-width: 950px) {
+	#menuAux {
+		background-color: rgba(255, 255, 255, 0);
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		width: 400px;
+		height: 1150px;
+	}	
+
+	#menuAux2 {
+		background-color: rgba(255, 255, 255, 0);
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		width: 400px;
+		height: 1240px;
+	}
+
+	#menuWrapper {
+		position: absolute;
+		width: 100vw;
+		height: 105vh;
+		background-color: rgba(255, 255, 255, 0);
+		left: -50px;
+		z-index: -1;
+	}
+
+	#Parts {
+		position: fixed;
+		width: 100vw;
+		height: 105vh;
+		z-index: -1;
+		opacity: 1;
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(0px);
+		transition: z-index, 2s ease;
+	}
+	
+	#menuParts {
+		position: absolute;
+		width: 100vw;
+		height: 105vh;
+		background-color: rgba(255, 255, 255, 0);
+		left: 0;
+	}
+	
+	#menuPart1 {
+		position: relative;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 105vh;
+		background-color: white;
+		overflow-y: auto;
+		overflow-x: hidden;
+		z-index: 1;
+	} 
+
+	#menuPart1.hide {
+		animation-name: close2;
+		animation-duration: 0.5s;
+		animation-timing-function: ease;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: both;
+	}
+	
+	#menuPart2 {
+		position: absolute;
+		right: 0.1vw;
+		width: 100vw;
+		height: 105vh;
+		background-color:#eeeff2;
+		z-index: 0;
+	}
+
+	#menuWrapper.open {
+		animation-name: open;
+		animation-duration: 0.8s;
+		animation-timing-function: ease;
+		animation-delay: 0.5s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: both;
+	}
+
+	#Transparent {
+		position: fixed;
+		width: 0vw;
+		height: 0vh;
+		z-index: -1;
+		opacity: 0;
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(0px);
+	}
+
+	#closeButtonWrapper	 {
+		position: absolute;
+		right: 0;
+		width: 6vw;	
+		height: 100vh;	
+		background-color: rgba(255, 255, 255, 0);
+		z-index: 2;
+	}
+	
+	#closeButton {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		background-color: rgba(255, 255, 255, 0);
+		left: -60px;
+		top: 32px;
+		cursor: pointer;
+		border: none;
+		transition: transform 2s ease, backdrop-filter 0.5s ease;
+	}
+
+	@keyframes close2 {from {left: 0;}to {left: -100vw;}}
+
+	@keyframes transpare {from {backdrop-filter: blur(0px); z-index: -1;}to {backdrop-filter: blur(0px);  z-index: 1;}}
+
+	@keyframes transpare2 {from {backdrop-filter: blur(0px); z-index: 1;}to {backdrop-filter: blur(0px); z-index: -1;}}
+
+}
+
+@media screen and (max-height: 3000px) and (max-width: 760px) {
+	#logoWrapper {
+		position: absolute;
+		width: 102vw;
+		height: 300px;
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0);
+	}
+	
+	#Logo.center {
+		animation-name: grow;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: both;
+	}
+
+	#closeButton {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		background-color: rgba(255, 255, 255, 0);
+		left: -60px;
+		top: 32px;
+		cursor: pointer;
+		border: none;
+		transition: transform 2s ease, backdrop-filter 0.5s ease;
+	}
+
+	footer {
+		position: relative;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 1350px;
+		background-color: black;
+	}
+	
+	#footerWrapper {
+		width: 1870px;
+		height: 1350px;
+		padding-left: 8vw;
+		background-color: black;
+	}
+
+	#Trio {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		height: 600px;
+		width: 96vw;
+	}
+
+	#Newsletter {
+		position: relative;
+		float: left;
+		width: 96vw;
+		height: 145px;
+		background-color: rgba(255, 255, 255, 0);
+		top: 15px;
+	}
+
+	#Contact {
+		position: relative;
+		float: left;
+		width: 96vw;
+		height: 145px;
+		background-color: rgba(255, 255, 255, 0);
+		top: 60px;
+		left: 0;
+	}
+	
+	#socialMedia {
+		position: relative;
+		float: left;
+		width: 340px;
+		height: 170px;
+		background-color: rgba(255, 255, 255, 0);
+		top: 105px;
+		left: 0px;
+	}
+	#socialMediaDiv {
+		position: absolute; 
+		width: 380px; 
+		bottom: 0; 
+		height: 55px;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	#trioButton {
+		background-color: white;
+		bottom: 0;
+		left: 0;
+		cursor: pointer;
+		position: absolute; 
+		border-radius: 7px; 
+		width: 85vw;
+		height: 55px; 
+		font-size: 106%; 
+		transition: all 0.15s ease-in;
+	}
+
+	#First {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		width: 150px;
+		height: 110px;
+	}
+	
+	#Second {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		width: 150px;
+		height: 110px;
+	}
+	
+	#Third {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		width: 150px;
+		height: 110px;
+	}
+
+	#horizontalLine {
+		position: relative;
+		float: left;
+		bottom: 0;
+		border: none; 
+		height: 1px; 
+		width: calc(100% - 8vw);
+		background-color: grey; 
+		top: 140px;
+	}
+
+	#logoFooterDiv {
+		background-color: rgba(255, 255, 255, 0);;
+		position: relative;
+		float: left;
+		width: calc(100% - 8vw);
+		height: 150px;
+		top: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@keyframes slideMidTop {from {width: 102vw; top: 0;}to {width: 220vw;top: 50%; transform: translate(-12%, -50%) scale(0.2);}}
+
+	@keyframes slideTopMid {from {width: 220vw; top: 50%; transform: translate(-12%, -50%) scale(0.2);}to {top: 0; width: 102vw;}}
+
+
+}
+
+@media screen and (max-height: 3000px) and (max-width: 650px) {
+	#closeButton {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		background-color: rgba(255, 255, 255, 0);
+		left: calc(-6.5vw - 20px);
+		top: 32px;
+		cursor: pointer;
+		border: none;
+		transition: transform 2s ease, backdrop-filter 0.5s ease;
+	}
+
+	#logoFooterDiv {
+		background-color: rgba(255, 255, 255, 0);;
+		position: relative;
+		float: left;
+		width: calc(100% - 4vw);
+		height: 150px;
+		top: 160px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#logoFooter {
+		background-color: rgba(255, 255, 255, 0);;
+		text-decoration: none;
+		color: white;
+		font-size: 60px;
+		font-family: Impact;
+		transform: scaleY(0.9);
+	}
+
+	@keyframes slideMidTop {from {width: 102vw; top: 0;}to {width: 220vw;top: 50%; transform: translate(-13%, -50%) scale(0.2);}}
+
+	@keyframes slideTopMid {from {width: 220vw; top: 50%; transform: translate(-13%, -50%) scale(0.2);}to {top: 0; width: 102vw;}}
+}
+
+@media screen and (max-height: 3000px) and (max-width: 550px) {
+
+	
+	#menuFilters {
+		background-color: rgba(255, 255, 255, 0);
+		position: relative;
+		float: left;
+		display: flex;
+		align-items: center;
+		width: 300px;
+		height: 150px;
+		border-radius: 10px;
+		margin-bottom: 0;
+		cursor: pointer;
+		transition: background-color 0.15s ease;
+	}
+
+	#menuImage1 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 90px;
+		left: 0;
+	}
+	
+	#menuImage2 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 130px;
+		left: 0px;
+		top: 15px;
+	}
+	
+	#menuImage3 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 200px;
+		left: 0px;
+		top: -5px;
+	}
+	
+	#menuImage4 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 55px;
+		left: 0px;
+	}
+	
+	#menuImage5 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 100px;
+	}
+	
+	#menuImage6 {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		width: 300px;
+		height: 120px;
+		left: 0px;
+	}
+
+	#horizontalLine {
+		position: relative;
+		float: left;
+		bottom: 0;
+		border: none; 
+		height: 1px; 
+		width: calc(100% - 4vw);
+		background-color: grey; 
+		top: 170px;
+	}
+
+	footer {
+		position: relative;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 1225px;
+		background-color: black;
+	}
+	
+	#footerWrapper {
+		width: 1870px;
+		height: 1225px;
+		padding-left: 8vw;
+		background-color: black;
+	}
+
+	@keyframes slideMidTop {from {width: 102vw; top: 0;}to {width: 220vw;top: 50%; transform: translate(-14%, -50%) scale(0.2);}}
+
+	@keyframes slideTopMid {from {width: 220vw; top: 50%; transform: translate(-14%, -50%) scale(0.2);}to {top: 0; width: 102vw;}}
+}
+
+@media screen and (max-height: 3000px) and (max-width: 450px) {
+	
+	@keyframes slideMidTop {from {width: 102vw; top: 0;}to {width: 220vw;top: 50%; transform: translate(-15%, -50%) scale(0.2);}}
+
+	@keyframes slideTopMid {from {width: 220vw; top: 50%; transform: translate(-15%, -50%) scale(0.2);}to {top: 0; width: 102vw;}}
+}
+
+@media screen and (max-height: 3000px) and (max-width: 420px) {
+	
+	#logoWrapper {
+		position: absolute;
+		width: 102vw;
+		height: 220px;
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0);
+	}
+	#Country {
+		position: relative;
+		display: inline;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		color: white;
+		font-size: 4.9vw;
+		font-family: Porsche;
+		letter-spacing: 0.6px;
+	}
+	#currentLanguage {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		color: white;
+		left: 15px;
+		top: 50%; 
+		transform: translateY(-45%);
+		font-size: 4vw;
+		font-family: Porsche;
+	}
+	#footerButton {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		color: white;
+		left: 40px;
+		top: 50%; 
+		transform: translateY(-45%);
+		font-size: 4vw;
+		border: none;
+		cursor: pointer;
+		z-index: 2;
+		text-decoration: underline;
+		font-family: Porsche;
+	}
+
+	#socialMedia {
+		position: relative;
+		float: left;
+		width: 96vw;
+		height: 235px;
+		background-color: rgba(255, 255, 255, 0);
+		top: 105px;
+		left: 0px;
+	}
+	#socialMediaDiv {
+		position: absolute; 
+		overflow-y: auto;
+		width: 250px; 
+		bottom: 0; 
+		height: 120px;
+		background-color: rgba(255, 255, 255, 0);
+	}
+	.button1 {
+		top:10px;
+		left: 0px;
+	}
+	.button2 {
+		top: 10px;
+		left: 10px;
+	}
+	#Company {
+		position: relative;
+		float: left;
+		background-color: rgba(255, 255, 255, 0);
+		height: 150px;
+		width: 80vw;
+		top: 70px;
+	}
+
+	@keyframes slideMidTop {from {width: 102vw; top: 0;}to {width: 250vw;top: 50%; transform: translate(-20%, -50%) scale(0.2);}}
+
+	@keyframes slideTopMid {from {width: 250vw; top: 50%; transform: translate(-20%, -50%) scale(0.2);}to {top: 0; width: 102vw;}}
+}

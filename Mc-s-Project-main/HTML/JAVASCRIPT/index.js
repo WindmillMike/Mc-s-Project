@@ -35,56 +35,32 @@ window.addEventListener('scroll', function() {
   var Transparent = document.getElementById('Transparent');
   var headerWrapper = document.getElementById('headerWrapper');
   var Body = document.getElementById('Body');
-  var Parts = document.getElementById('Parts');
-  const menuPart1 = document.getElementById('menuPart1');
-  const menuPart2 = document.getElementById('menuPart2');
+  var Footer = document.getElementById('Footer');
   
   document.getElementById("menuButton").addEventListener("click", function() {
     menuWrapper.classList.remove('close');
+    menuParts.classList.remove('close');
     menuWrapper.classList.add('open');
+    menuParts.classList.add('open');
     Transparent.classList.remove('close');
     Transparent.classList.add('open');
     headerWrapper.classList.remove('close');
     headerWrapper.classList.add('open');
     Body.classList.remove('Move');
     Body.classList.add('noMove');
-    Parts.classList.remove('hide');
-    Parts.classList.add('appear');
+    Footer.classList.add('back');
   });
 
   document.getElementById("closeButton").addEventListener("click", function() {
     menuWrapper.classList.remove('open');
+    menuParts.classList.remove('open');
     menuWrapper.classList.add('close');
+    menuParts.classList.add('close');
     Transparent.classList.remove('open');
     Transparent.classList.add('close');
     headerWrapper.classList.remove('open');
     headerWrapper.classList.add('close');
     Body.classList.remove('noMove');
     Body.classList.add('Move');
-    Parts.classList.remove('appear');
-    Parts.classList.add('hide');
-    menuFilters.forEach(function(item) {
-      item.classList.remove('selected');
+    Footer.classList.remove('back');
   });
-    setTimeout(() => {
-      menuPart1.classList.remove('hide');
-    }, 500);
-    setTimeout(() => {
-      menuPart1.scrollTop = 3;
-      menuPart2.scrollTop = 3;
-    }, 200);
-  });
-
-  for (const menuFilter of document.querySelectorAll('#menuFilters')) {
-    menuFilter.addEventListener('click', function() {
-      menuFilters.forEach(function(item) {
-        item.classList.remove('selected');
-    });
-      menuPart1.classList.add('hide');
-      this.classList.toggle('selected');
-    });
-  }
-
-  var menuFilters = document.querySelectorAll("#menuFilters");
-
-
